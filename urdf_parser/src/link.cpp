@@ -205,6 +205,16 @@ bool parseCapsule(Capsule &y, TiXmlElement *c)
     CONSOLE_BRIDGE_logError(stm.str().c_str());
     return false;
   }
+
+  try{
+    y.radius = strToDouble(c->Attribute("radius"));
+  } catch(std::runtime_error &) {
+    std::stringstream stm;
+    stm << "radius [" << c->Attribute("radius") << "] is not a valid float";
+    CONSOLE_BRIDGE_logError(stm.err().c_str());
+    return false;
+  }
+
   return true;
 }
 
