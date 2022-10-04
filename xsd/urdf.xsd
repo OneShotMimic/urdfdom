@@ -75,6 +75,12 @@
     <xs:attribute name="length" type="xs:double" use="required" />
   </xs:complexType>
 
+  <!-- capsule node type -->
+  <xs:complexType name="capsule">
+    <xs:attribute name="radius" type="xs:double" use="required" />
+    <xs:attribute name="length" type="xs:double" use="required" />
+  </xs:complexType>
+
   <!-- sphere node type -->
   <xs:complexType name="sphere">
     <xs:attribute name="radius" type="xs:double" use="required" />
@@ -91,6 +97,7 @@
     <xs:choice>
       <xs:element name="box" type="box" />
       <xs:element name="cylinder" type="cylinder" />
+      <xs:element name="capsule" type="capsule" />
       <xs:element name="sphere" type="sphere" />
       <xs:element name="mesh" type="mesh" />
     </xs:choice>
